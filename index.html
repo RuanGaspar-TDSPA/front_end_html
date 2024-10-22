@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 910px;
+            height: 910px;
+            background-color: yellow;
+            position: relative;
+        }
+
+        #quadro {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function Mover() {
+            var quadro = document.getElementById("quadro");
+            var pos = 0;
+            direcao = "direita";
+
+            setInterval(Animacao, 10)//setInterval(param1, param2);
+            //param1 = o que será executado
+            // param2 = tempo em milisegundos
+
+            function Animacao() {
+                quadro.style.left == pos + "px";
+                pos++;
+                direcao = "esq"
+                if (posLeft = 860) {
+                    quadro.style.left = pos + "px";
+                    pos++;
+                    direcao = "dir"
+                    if (pos == 860) {
+                        quadro.style.left = pos = "px";
+                        pos--;
+                        direcao = "baixo";
+
+
+                    }
+                    if (pos == 860) {
+                        quadro.style.left = pos + "px";
+                        pos++;
+                    }
+                    if (direcao == "esq") {
+                        quadro.style.left = pos + "px";
+                        pos++;
+                        if (pos == 0) {
+                            pos = 0;
+
+                        }
+                    }
+
+                }
+            }
+        }
+
+    </script>
+    <button type="button" onclick="Mover()">Click</button>
+    <div id="container">
+        <div id="quadro"></div>
+    </div>
+
+</body>
+
+</html>
